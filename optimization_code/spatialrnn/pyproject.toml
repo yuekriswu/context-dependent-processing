@@ -1,0 +1,45 @@
+[build-system]
+# editable install using setuptool available since v64.0.0
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "niarb"
+version = "0.1.0"
+description = "Neural network library for modeling the brain."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Ho Yin Chau" }]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "seaborn",
+    "statsmodels",
+    "matplotlib",
+    "torch >= 2.4.0, < 2.6.0",
+    "torchdiffeq",
+    "hyclib >= 0.1.40",
+    "tdfl >= 0.1.15",
+    "tqdm",
+    "ricciardi >= 0.1.6",
+    "torch-bessel >= 0.0.4",
+]
+
+[project.urls]
+repository = "https://github.com/hchau630/niarb"
+
+[project.scripts]
+niarb = "niarb.main:main"
+
+[tool.pytest.ini_options]
+env = [
+    "PYTORCH_ENABLE_MPS_FALLBACK=1", # due to torch.bucketize currently not supporting MPS (as of torch 2.0.1)
+]

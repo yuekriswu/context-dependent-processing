@@ -1,0 +1,2 @@
+# How to run benchmarks
+Benchmarks are performed using the `asv` packages, which allows tracking the performance of each benchmarked function over commit history. To run them, simply do `asv run`. The results of the benchmarks can then be updated on the github page `https://hchau630.github.io/niarb` with the command `asv gh-pages`.

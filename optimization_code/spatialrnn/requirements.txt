@@ -1,0 +1,13 @@
+# benchmarking requirements
+asv  # for benchmarking
+
+# testing requirements
+pytest
+pytest-cov  # pytest coverage plugin
+pytest-env  # for setting environment variable for tests
+
+# development requirements
+flake8  # linting
+black  # code formatting
+
+-e .
